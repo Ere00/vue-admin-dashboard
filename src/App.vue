@@ -4,6 +4,16 @@
   </div>
 </template>
 
+<script>
+export default {
+  name: "App",
+  mounted() {
+    const isDarkMode = this.$store.getters.isDarkMode;
+    document.body.style.background = isDarkMode ? "#212C4F" : "#F0F3F5";
+  }
+};
+</script>
+
 <style lang="scss">
 body {
   background-color: $dark-blue;
