@@ -32,6 +32,7 @@
 <script>
 import RequestAccount from "@/components/RequestAccount";
 import ThemeSwitch from "@/components/ThemeSwitch";
+import * as netlifyIdentityWidget from "netlify-identity-widget";
 
 export default {
   name: "SignIn",
@@ -43,6 +44,9 @@ export default {
     isDarkMode() {
       return this.$store.getters.isDarkMode;
     }
+  },
+  mounted() {
+    netlifyIdentityWidget.open();
   }
 };
 </script>
