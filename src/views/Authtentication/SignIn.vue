@@ -21,9 +21,8 @@
           placeholder="Password"
           :class="{'light-field':isDarkMode,'dark-field':!isDarkMode}"
           v-model="password"
-          required
         />
-        <button>Sign In</button>
+        <button @click="onClick">Sign In</button>
       </form>
       <router-link
         to="/recover"
@@ -38,9 +37,9 @@
 import RequestAccount from "@/components/RequestAccount";
 import ThemeSwitch from "@/components/ThemeSwitch";
 
-// import * as netlifyIdentityWidget from "netlify-identity-widget";
+//import * as netlifyIdentityWidget from "netlify-identity-widget";
 
-import { auth } from "@/main";
+//import { auth } from "@/main";
 
 export default {
   name: "SignIn",
@@ -60,6 +59,12 @@ export default {
     }
   },
   methods: {
+    onClick() {
+      this.$router.push("/");
+    }
+  },
+  /*
+  methods: {
     onSubmit() {
       const email = this.email;
       const password = this.password;
@@ -67,15 +72,17 @@ export default {
       auth
         .login(email, password)
         .then(response => {
-          alert("Response " + response.email);
+          alert("Response " + response.email, true);
+          this.$router.replace("/");
         })
         .catch(error => {
           alert("Error " + error);
         });
     }
   },
+  */
   mounted() {
-    // Use GoTrue JS
+    // GoTrue works in only in production. Use this in dev
     //netlifyIdentityWidget.open();
   }
 };

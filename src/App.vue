@@ -23,6 +23,7 @@ export default {
 
 body {
   background-color: $dark-blue;
+  margin: 0;
 }
 
 h1 {
@@ -38,19 +39,6 @@ p {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $white;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: $white;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
 }
 
 h4 {
@@ -129,6 +117,7 @@ a {
   &::placeholder {
     color: rgba(255, 255, 255, 0.3);
   }
+  color: $white;
 }
 
 .dark-field {
@@ -137,6 +126,7 @@ a {
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);
   }
+  color: $black;
 }
 
 .light-link {
