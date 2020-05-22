@@ -67,7 +67,7 @@ export default {
       auth
         .login(email, password)
         .then(response => {
-          alert("Response " + response).email;
+          alert("Response " + response.email);
         })
         .catch(error => {
           alert("Error " + error);
